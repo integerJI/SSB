@@ -13,6 +13,8 @@ import lombok.Setter;
 import com.mysite.sbb.question.Question;
 import com.mysite.sbb.user.SiteUser;
 import javax.persistence.ManyToOne;
+import java.util.Set;
+import javax.persistence.ManyToMany;
 
 @Getter
 @Setter
@@ -34,5 +36,8 @@ public class Answer {
     private SiteUser author;
 
     private LocalDateTime modifyDate;
+
+    @ManyToMany
+    Set<SiteUser> voter;
 
 }
